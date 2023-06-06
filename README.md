@@ -1,2 +1,2 @@
 # twitter-clone
-#TODO: Add description :)
+#TODO: Add a description :)
