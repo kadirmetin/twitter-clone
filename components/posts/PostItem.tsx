@@ -8,12 +8,17 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useLike from "@/hooks/useLike";
 
 import Avatar from "../Avatar";
+
 interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
 }
 
 const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
+  if (!data) {
+    return null;
+  }
+
   const router = useRouter();
   const loginModal = useLoginModal();
 
@@ -81,20 +86,22 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
                 hover:underline
             "
             >
-              {data.user.name}
+              {data?.user?.name}
             </p>
-            <span
-              onClick={goToUser}
-              className="
-                text-neutral-500
-                cursor-pointer
-                hover:underline
-                hidden
-                md:block
-            "
-            >
-              @{data.user.username}
-            </span>
+            {data?.user?.username && (
+              <span
+                onClick={goToUser}
+                className="
+                  text-neutral-500
+                  cursor-pointer
+                  hover:underline
+                  hidden
+                  md:block
+              "
+              >
+                @{data.user.username}
+              </span>
+            )}
             <span className="text-neutral-500 text-sm">{createdAt}</span>
           </div>
           <div className="text-white mt-1">{data.body}</div>
@@ -112,7 +119,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
             "
             >
               <AiOutlineMessage size={20} />
-              <p>{data.comments?.length || 0}</p>
+              <p>{data?.comments?.length || 0}</p>
             </div>
             <div
               onClick={onLike}
@@ -128,7 +135,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
             "
             >
               <LikeIcon color={hasLiked ? "red" : ""} size={20} />
-              <p>{data.likedIds.length}</p>
+              <p>{data?.likedIds?.length || 0}</p>
             </div>
           </div>
         </div>
