@@ -34,7 +34,7 @@ const UserView = () => {
   return (
     <>
       <SEO
-        pageTitle={`${fetchedUser?.name} (@${fetchedUser?.username}) / Twitter`}
+        pageTitle={`Profile / Twitter`}
       />
       <Header showBackArrow label={fetchedUser?.name} />
       <UserHero userId={userId as string} />

@@ -26,7 +26,7 @@ const PostView = () => {
   return (
     <>
       <SEO
-        pageTitle={`${fetchedPost?.user.name} Twitter'da: "${fetchedPost?.body}" / Twitter`}
+        pageTitle={`Post / Twitter`}
       />
       <Header showBackArrow label="Tweet" />
       <PostItem data={fetchedPost} />
