@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
@@ -25,9 +23,11 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
   const goToUser = useCallback(
     (ev: any) => {
       ev.stopPropagation();
-      router.push(`/users/${data.user.id}`);
+      if (data?.user?.id) {
+        router.push(`/users/${data.user.id}`);
+      }
     },
-    [router, data.user.id]
+    [router, data?.user?.id]
   );
 
   const goToPost = useCallback(() => {
@@ -53,9 +53,8 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
     if (!data?.createdAt) {
       return null;
     }
-
     return formatDistanceToNowStrict(new Date(data.createdAt));
-  }, [data.createdAt]);
+  }, [data?.createdAt]);
 
   return (
     <div
@@ -70,7 +69,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
       "
     >
       <div className="flex flex-row items-start gap-3">
-        <Avatar userId={data.user.id} />
+        <Avatar userId={data?.user?.id} />
         <div>
           <div className="flex flex-row items-center gap-2">
             <p
