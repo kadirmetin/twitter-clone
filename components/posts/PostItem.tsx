@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
