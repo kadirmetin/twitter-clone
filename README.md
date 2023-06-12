@@ -37,7 +37,6 @@ Not: Bu proje, Twitter'ın tamamen aynısını oluşturmaktan ziyade, Twitter'ı
 
   <p float="left" align="center">
   <img src="https://github.com/kadirmetin/twitter-clone/assets/82063998/62f91b76-97f8-4d2d-b595-315c190b6374" width="225" />
-  <img src="https://github.com/kadirmetin/twitter-clone/assets/82063998/8ac38ce3-4968-499b-9865-4c7ea3cf6f6a" width="225" /> 
   <img src="https://github.com/kadirmetin/twitter-clone/assets/82063998/a95935d6-c4ae-42e8-9efc-02892c0e41c2" width="225" />
   <img src="https://github.com/kadirmetin/twitter-clone/assets/82063998/bfff489a-13b0-4447-b6b1-d63cd1ee9db2" width="225" />
 </p>
